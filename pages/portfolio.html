@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LBM Solutions - Our Portfolio of Digital Success</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts Links -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Custom CSS (Consistent Styling) -->
+    <style>
+        /* Define Brand Colors for Light Theme */
+        :root {
+            --bs-primary: #D77F21;
+            /* Rich Orange/Brown (EXCLUSIVE for Newsletter/key CTA) */
+            --bs-secondary: #666666;
+            /* Medium Gray for secondary text */
+            --bs-main-text: #222222;
+            /* Primary text color */
+            --bs-light-bg: #FFFFFF;
+            /* Primary Light Background (Hero, About, Cards) */
+            --bs-alt-bg: #F5F5F5;
+            /* Alternate Light Background (Pricing, Detailed Services, FAQ) */
+            --bs-card-border: #E0E0E0;
+            /* Light border color for cards */
+            --bs-dark-footer: #1F1F1F;
+            /* Footer background */
+            --bs-cta-unique: #5A779C;
+            /* Unique cool dark color for CTA section */
+
+            /* Font Definitions */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bs-light-bg);
+            color: var(--bs-main-text);
+        }
+
+        /* Apply Playfair Display to all headings and lead text */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .display-5,
+        .lead {
+            font-family: var(--font-heading);
+        }
+
+        /* Overriding Bootstrap classes for the custom primary color */
+        .bg-primary-custom {
+            background-color: var(--bs-primary) !important;
+        }
+
+        .text-primary-custom {
+            color: var(--bs-primary) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #BD6D1A;
+            border-color: #BD6D1A;
+            box-shadow: 0 6px 12px rgba(215, 127, 33, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section Styling */
+        #portfolio-hero {
+            background-color: var(--bs-alt-bg);
+            padding: 8rem 0;
+        }
+
+        /* CTA Section - Unique Cool Color */
+        #business-cta {
+            background-color: var(--bs-cta-unique);
+            color: white;
+        }
+
+        /* Footer - Dark background for strong separation */
+        footer {
+            background-color: var(--bs-dark-footer) !important;
+        }
+
+        /* ============================================= */
+        /* Portfolio Card Styling */
+        /* ============================================= */
+        .portfolio-card {
+            background-color: var(--bs-light-bg);
+            border: 1px solid var(--bs-card-border);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-card img {
+            transition: transform 0.5s ease-out;
+            width: 100%;
+            height: auto;
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-details {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+
+
+        /* ============================================= */
+        /* SCROLL ANIMATION CLASSES (Run Once is handled in JS) */
+        /* ============================================= */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(30px);
+        }
+
+        .animate-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.15s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.45s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.6s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.75s;
+        }
+
+        .delay-6 {
+            transition-delay: 0.9s;
+        }
+
+        .delay-7 {
+            transition-delay: 1.05s;
+        }
+
+        .delay-8 {
+            transition-delay: 1.2s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================= -->
+    <!-- 1. NAVIGATION BAR (HEADER) - Light Theme (5-Item Nav) -->
+    <!-- ============================================= -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary-custom" href="index.html">LBM Solutions</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page"
+                                href="portfolio.html">Portfolio</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-primary-custom rounded-pill px-4" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ============================================= -->
+        <!-- 2. PAGE HERO SECTION (Updated to two-column layout) -->
+        <!-- ============================================= -->
+        <section id="portfolio-hero" class="py-5">
+            <div class="container py-5">
+                <div class="row align-items-center g-5">
+                    <!-- Text Content (Left Side) -->
+                    <div class="col-lg-6 animate-on-scroll delay-1">
+                        <h1 class="display-5 fw-bold text-primary-custom">Our Work. Your Digital Success.</h1>
+                        <p class="lead text-secondary mt-3">We turn digital aspirations into market-leading reality. See
+                            the results of our expertise in design, hosting, and marketing.</p>
+                        <p class="text-secondary mt-4">Explore a selection of our recent projects, showcasing the
+                            diverse capabilities in e-commerce, corporate sites, and robust web applications.</p>
+                        <a href="#portfolio-gallery" class="btn btn-primary-custom rounded-pill px-4 mt-3">View Projects
+                            Below</a>
+                    </div>
+
+                    <!-- Image Content (Right Side) -->
+                    <div class="col-lg-6 text-center animate-on-scroll delay-3">
+                        <img src="../assets/img/portfolio.png"
+                            class="img-fluid rounded-lg shadow-lg" alt="Portfolio Showcase"
+                            style="border-radius: 1rem;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================= -->
+        <!-- 3. PORTFOLIO GALLERY -->
+        <!-- ============================================= -->
+        <section id="portfolio-gallery" class="py-5" style="background-color: var(--bs-light-bg);">
+            <div class="container">
+
+                <h2 class="fw-bold text-center mb-5 animate-on-scroll delay-3">Featured Projects</h2>
+
+                <!-- Filter Buttons REMOVED -->
+
+                <!-- Project Grid (3 columns) -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+                    <!-- Project 1: E-Commerce Platform -->
+                    <div class="col">
+                        <div class="portfolio-card animate-on-scroll delay-4" data-category="ecommerce">
+                            <img src="../assets/img/portfolio1.png"
+                                class="card-img-top" alt="E-Commerce Project Mockup">
+                            <div class="project-details">
+                                <h5 class="fw-bold">Secured Marketplace App</h5>
+                                <p class="text-secondary"><small>Category: E-Commerce & Web App</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Corporate Website -->
+                    <div class="col">
+                        <div class="portfolio-card animate-on-scroll delay-5" data-category="design">
+                            <img src="../assets/img/portfolio6.png"
+                                class="card-img-top" alt="Corporate Website Project Mockup">
+                            <div class="project-details">
+                                <h5 class="fw-bold">Global Consulting Site</h5>
+                                <p class="text-secondary"><small>Category: Web Design & Development</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Domain & Hosting Interface -->
+                    <div class="col">
+                        <div class="portfolio-card animate-on-scroll delay-6" data-category="hosting">
+                            <img src="../assets/img/portfolio2.png"
+                                class="card-img-top" alt="Hosting UI Project Mockup">
+                            <div class="project-details">
+                                <h5 class="fw-bold">Client Hosting Dashboard</h5>
+                                <p class="text-secondary"><small>Category: Web Site Hosting</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Marketing Landing Page -->
+                    <div class="col">
+                        <div class="portfolio-card animate-on-scroll delay-7" data-category="marketing">
+                            <img src="../assets/img/portfolio3.png"
+                                class="card-img-top" alt="Marketing Landing Page Mockup">
+                            <div class="project-details">
+                                <h5 class="fw-bold">Lead Generation Campaign</h5>
+                                <p class="text-secondary"><small>Category: Web Site Marketing</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Startup App -->
+                    <div class="col">
+                        <div class="portfolio-card animate-on-scroll delay-8" data-category="design">
+                            <img src="../assets/img/portfolio4.png"
+                                class="card-img-top" alt="Startup App Mockup">
+                            <div class="project-details">
+                                <h5 class="fw-bold">FinTech Startup Portal</h5>
+                                <p class="text-secondary"><small>Category: Web Design & Development</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: B2B E-Business Portal -->
+                    <div class="col">
+                        <div class="portfolio-card animate-on-scroll delay-9" data-category="ebusiness">
+                            <img src="../assets/img/portfolio5.png"
+                                class="card-img-top" alt="B2B E-Business Portal Mockup">
+                            <div class="project-details">
+                                <h5 class="fw-bold">Enterprise E-Business Hub</h5>
+                                <p class="text-secondary"><small>Category: e-Business Strategy</small></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================= -->
+        <!-- 4. CTA: LBM BUSINESS SOLUTIONS - UNIQUE COOL COLOR -->
+        <!-- ============================================= -->
+        <section id="business-cta" class="py-5">
+            <div class="container text-center animate-on-scroll">
+                <h2 class="fw-bold mb-3">Ready to Start Your Digital Journey?</h2>
+                <p class="lead mb-4">Partner with LBM Solutions and leverage our expertise to accelerate your success.
+                </p>
+                <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5">Contact Us Today</a>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- ============================================= -->
+    <!-- 5. FOOTER - Black Dark Background -->
+    <!-- ============================================= -->
+    <footer class="text-white" style="background-color: var(--bs-dark-footer);">
+        <div class="container pt-5 pb-3">
+            <div class="row g-4 animate-on-scroll delay-1">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-primary-custom">LBM Solutions</h5>
+                    <p class="text-secondary">Your trusted partner for web services, hosting, and digital marketing
+                        excellence in Nigeria.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-secondary text-decoration-none py-1 d-block">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="text-secondary text-decoration-none py-1 d-block">Services</a></li>
+                        <li><a href="portfolio.html"
+                                class="text-secondary text-decoration-none py-1 d-block">Portfolio</a></li>
+                        <li><a href="index.html#faq" class="text-secondary text-decoration-none py-1 d-block">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Support & Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-secondary text-decoration-none py-1 d-block">Contact
+                                Us</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Career</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Support</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Address</h5>
+                    <div class="map-placeholder"
+                        style="height: 150px; background-color: #333; border-radius: 0.5rem; font-size: 0.9rem;">
+                        [Map Placeholder]
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: #343a40;">
+            <div class="text-center">
+                <small class="text-secondary">&copy; 2024 LBM Solutions. All Right Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="../assets/js/script.js"></script>
+    <!-- Custom Animation JavaScript using IntersectionObserver (REPLICATED from index.html) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.05
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Unobserving ensures the animation runs only once.
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            elements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
