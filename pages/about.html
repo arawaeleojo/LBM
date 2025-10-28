@@ -4,35 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About LBM Solutions - Our Story & Mission</title>
+    <!-- CONTENT UPDATE: Title changed -->
+    <title>About LBM Solutions - Our Story, Mission & Process</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- DESIGN UPDATE: Added Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Google Fonts Links -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
+    <!-- FILE PATH UPDATE: Corrected path -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Custom CSS (REPLICATED from index.html for consistent styling) -->
+    <!-- Custom CSS -->
     <style>
         /* Define Brand Colors for Light Theme */
         :root {
             --bs-primary: #D77F21;
-            /* Rich Orange/Brown (EXCLUSIVE for Newsletter/key CTA) */
+            /* Rich Orange/Brown */
             --bs-secondary: #666666;
-            /* Medium Gray for secondary text */
+            /* Medium Gray */
             --bs-main-text: #222222;
-            /* Primary text color */
+            /* Primary text */
             --bs-light-bg: #FFFFFF;
-            /* Primary Light Background (Hero, About, Cards) */
+            /* Primary Light */
             --bs-alt-bg: #F5F5F5;
-            /* Alternate Light Background (Mission/Vision, Services, FAQ) */
+            /* Alternate Light */
             --bs-card-border: #E0E0E0;
-            /* Light border color for cards */
+            /* Light border */
             --bs-dark-footer: #1F1F1F;
-            /* Footer background */
+            /* Footer */
             --bs-cta-unique: #5A779C;
-            /* Unique cool dark color for CTA section */
+            /* Unique CTA */
 
             /* Font Definitions */
             --font-heading: 'Playfair Display', serif;
@@ -81,11 +85,12 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section (Replaced Page Banner) */
+        /* Hero Section (Internal Page Hero) */
         #about-hero {
             background-color: var(--bs-alt-bg);
             padding: 8rem 0;
-            /* Increased padding */
+            /* Top padding to account for fixed navbar */
+            margin-top: 72px; /* Height of the solid navbar */
         }
 
         /* CTA Section - Unique Cool Color */
@@ -100,9 +105,8 @@
         }
 
         /* ============================================= */
-        /* WOW CARDS: 3D Mission/Vision Cards (Sleek Light) */
+        /* Mission/Vision Cards */
         /* ============================================= */
-        /* Mission/Vision Cards use the white background with dark accents */
         .vision-card,
         .mission-card {
             background: var(--bs-light-bg);
@@ -110,10 +114,10 @@
             border-radius: 1.5rem;
             padding: 2.5rem 2rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            /* Lighter shadow for light theme */
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
             transform-style: preserve-3d;
             border: 1px solid var(--bs-card-border);
+            height: 100%;
         }
 
         .vision-card:hover,
@@ -123,21 +127,48 @@
             border-color: var(--bs-primary);
         }
 
+        /* DESIGN UPDATE: CSS for new <i> icons */
         .card-icon-lg {
-            width: 50px;
-            height: 50px;
-            fill: var(--bs-main-text);
-            /* Icons are dark on light cards, controlled by CSS */
+            font-size: 50px; /* Replaces width/height */
+            color: var(--bs-main-text); /* Replaces fill */
+            line-height: 1;
         }
-
-        .mission-card h4,
-        .vision-card h4 {
-            color: var(--bs-main-text);
-        }
-
 
         /* ============================================= */
-        /* SCROLL ANIMATION CLASSES (Run Once is handled in JS) */
+        /* DESIGN UPDATE: New "Our Process" Section */
+        /* ============================================= */
+        .process-step {
+            position: relative;
+            padding: 2rem;
+            background-color: var(--bs-light-bg);
+            border: 1px solid var(--bs-card-border);
+            border-radius: 1rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--bs-primary);
+        }
+
+        .process-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--bs-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .process-icon {
+            font-size: 2.5rem;
+            color: var(--bs-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================= */
+        /* SCROLL ANIMATION CLASSES */
         /* ============================================= */
         .animate-on-scroll {
             opacity: 0;
@@ -150,43 +181,32 @@
             transform: translateY(0);
         }
 
-        .delay-1 {
-            transition-delay: 0.15s;
-        }
-
-        .delay-2 {
-            transition-delay: 0.3s;
-        }
-
-        .delay-3 {
-            transition-delay: 0.45s;
-        }
-
-        .delay-4 {
-            transition-delay: 0.6s;
-        }
-
-        .delay-5 {
-            transition-delay: 0.75s;
-        }
+        .delay-1 { transition-delay: 0.15s; }
+        .delay-2 { transition-delay: 0.3s; }
+        .delay-3 { transition-delay: 0.45s; }
+        .delay-4 { transition-delay: 0.6s; }
+        .delay-5 { transition-delay: 0.75s; }
     </style>
 </head>
 
 <body>
 
     <!-- ============================================= -->
-    <!-- 1. NAVIGATION BAR (HEADER) - Light Theme (5-Item Nav) -->
+    <!-- 1. NAVIGATION BAR (Internal Page Version) -->
     <!-- ============================================= -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <!-- This navbar is solid white, sticky, and has a shadow. It's the "scrolled" state by default for internal pages. -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm py-3">
             <div class="container">
-                <a class="navbar-brand fw-bold text-primary-custom" href="index.html">LBM Solutions</a>
+                <!-- FILE PATH UPDATE: Corrected path -->
+                <a class="navbar-brand fw-bold text-primary-custom" href="../index.html">LBM Solutions</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
+                        <!-- FILE PATH UPDATE: Corrected paths -->
                         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About</a>
                         </li>
@@ -203,60 +223,61 @@
 
     <main>
         <!-- ============================================= -->
-        <!-- 2. PAGE HERO SECTION (UPDATED with Image) -->
+        <!-- 2. PAGE HERO SECTION (CONTENT UPDATED) -->
         <!-- ============================================= -->
-        <section id="about-hero" class="py-5" style="background-color: var(--bs-alt-bg);">
+        <section id="about-hero" class="py-5">
             <div class="container py-5">
                 <div class="row align-items-center g-5">
                     <!-- Text Content (Left Side) -->
                     <div class="col-lg-6 animate-on-scroll delay-1">
-                        <h1 class="display-5 fw-bold text-primary-custom">The LBM Solutions Story</h1>
-                        <p class="lead text-secondary mt-3">We are client-focused, reliable, and dedicated to achieving
-                            digital excellence for every business we serve.</p>
-                        <p class="text-secondary mt-4">Founded on the principle of clear, efficient, and secure web
-                            solutions, LBM Solutions is your long-term partner for growth in the digital space.</p>
-                        <a href="#company-philosophy" class="btn btn-primary-custom rounded-pill px-4 mt-3">See Our
-                            Mission</a>
+                        <!-- CONTENT UPDATE: New H1 and text -->
+                        <h1 class="display-5 fw-bold text-primary-custom">We Are Your Digital Growth Partner</h1>
+                        <p class="lead text-secondary mt-3">We're a team of strategists, designers, and developers in
+                            Nigeria, united by a mission to build powerful, profitable digital experiences.</p>
+                        <p class="text-secondary mt-4">We believe in a partnership approach, working hand-in-hand with
+                            our clients—from government entities to commercial corporations—to ensure their online
+                            presence not only meets but exceeds global standards.</p>
+                        <a href="#company-philosophy" class="btn btn-primary-custom rounded-pill px-4 mt-3">Discover
+                            Our Process</a>
                     </div>
 
                     <!-- Image Content (Right Side) -->
                     <div class="col-lg-6 text-center animate-on-scroll delay-3">
-                        <img src="../assets/img/abouthero.png"
-                            class="img-fluid rounded-lg shadow-lg" alt="LBM Solutions team collaborating"
-                            style="border-radius: 1rem;">
+                        <img src="../assets/img/abouthero.png" class="img-fluid rounded-lg shadow-lg"
+                            alt="LBM Solutions team collaborating" style="border-radius: 1rem;">
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- ============================================= -->
-        <!-- 3. DETAILED COMPANY PHILOSOPHY (Retained) -->
+        <!-- 3. DETAILED COMPANY PHILOSOPHY (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="company-philosophy" class="py-5" style="background-color: var(--bs-light-bg);">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 text-center animate-on-scroll delay-3">
-                        <img src="../assets/img/about2 (2).png"
-                            class="img-fluid rounded-lg shadow" alt="Team Collaboration" style="border-radius: 1rem;">
+                        <img src="../assets/img/about2 (2).png" class="img-fluid rounded-lg shadow"
+                            alt="Team Collaboration" style="border-radius: 1rem;">
                     </div>
                     <div class="col-lg-6 animate-on-scroll delay-1">
                         <h2 class="fw-bold mb-3">Pioneering Digital Solutions in Nigeria</h2>
+                        <!-- CONTENT UPDATE: New text -->
                         <p class="lead">LBM Solutions began with a clear vision: to demystify the digital world and make
                             enterprise-level web services accessible to every business, regardless of size.</p>
                         <p class="text-secondary">Founded in 2009, we quickly established ourselves as a client-focused,
                             reliable partner. Our journey has been marked by continuous innovation, adapting swiftly to
                             new technologies, and always prioritizing the security and clarity of the solutions we
                             provide.</p>
-                        <p class="text-secondary">We believe in a partnership approach, working hand-in-hand with our
-                            clients—from government entities to commercial corporations—to ensure their online presence
-                            not only meets but exceeds global standards.</p>
+                        <p class="text-secondary">Today, we are more than a web provider. We are a growth agency. We
+                            don't just build your site; we build your business online.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ============================================= -->
-        <!-- 4. MISSION & VISION (Alternate Light Background - Replaced Milestones) -->
+        <!-- 4. MISSION & VISION (DESIGN UPDATED) -->
         <!-- ============================================= -->
         <section id="mission-vision" class="py-5" style="background-color: var(--bs-alt-bg);">
             <div class="container">
@@ -265,11 +286,8 @@
                     <!-- Mission Card -->
                     <div class="col-md-5">
                         <div class="mission-card text-center animate-on-scroll delay-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                class="bi bi-rocket-fill card-icon-lg mb-3" viewBox="0 0 16 16">
-                                <path
-                                    d="M12.173 1.583a1.5 1.5 0 0 1 2.457 1.488l-1.353 3.513c-.097.252-.164.498-.21.685l-1.892 5.688a2 2 0 0 1-1.393 1.25c-.246.066-.51.107-.796.107-.55 0-1.106-.11-1.637-.323l-.117-.044a.5.5 0 0 1-.392-.1L.116 10.155a.5.5 0 0 1-.16-.39.5.5 0 0 1 .15-.36l.732-.821a.5.5 0 0 1 .6-.1l3.545 1.417 1.417-3.545a.5.5 0 0 1 .1-.6l.821-.732a.5.5 0 0 1 .39-.15z" />
-                            </svg>
+                            <!-- DESIGN UPDATE: Replaced SVG with <i> icon -->
+                            <i class="bi bi-rocket-fill card-icon-lg mb-3"></i>
                             <h4 class="fw-bold">Our Mission</h4>
                             <p class="mb-0 text-secondary">To empower businesses through cutting-edge technology,
                                 reliable hosting, and strategic digital solutions that foster growth and security.</p>
@@ -279,12 +297,8 @@
                     <!-- Vision Card -->
                     <div class="col-md-5">
                         <div class="vision-card text-center animate-on-scroll delay-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                class="bi bi-eye-fill card-icon-lg mb-3" viewBox="0 0 16 16">
-                                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-                                <path
-                                    d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
-                            </svg>
+                            <!-- DESIGN UPDATE: Replaced SVG with <i> icon -->
+                            <i class="bi bi-eye-fill card-icon-lg mb-3"></i>
                             <h4 class="fw-bold">Our Vision</h4>
                             <p class="mb-0 text-secondary">To be the most trusted and leading provider of web
                                 infrastructure and creative digital services across the African continent.</p>
@@ -294,13 +308,61 @@
             </div>
         </section>
 
+        <!-- ============================================= -->
+        <!-- 5. NEW "OUR PROCESS" SECTION (DESIGN & CONTENT) -->
+        <!-- ============================================= -->
+        <section id="our-process" class="py-5" style="background-color: var(--bs-light-bg);">
+            <div class="container">
+                <h2 class="fw-bold text-center mb-5 animate-on-scroll">Our Proven Process</h2>
+                <div class="row g-4">
+                    <!-- Step 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="process-step animate-on-scroll delay-1">
+                            <div class="process-number">01</div>
+                            <h5 class="fw-bold">Discover & Strategize</h5>
+                            <p class="text-secondary mb-0">We start by understanding your goals, audience, and
+                                competition to build a custom roadmap for success.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="process-step animate-on-scroll delay-2">
+                            <div class="process-number">02</div>
+                            <h5 class="fw-bold">Design & Brand</h5>
+                            <p class="text-secondary mb-0">Our designers create a stunning, user-friendly interface
+                                (UI/UX) that builds trust and reflects your unique brand identity.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="process-step animate-on-scroll delay-3">
+                            <div class="process-number">03</div>
+                            <h5 class="fw-bold">Develop & Launch</h5>
+                            <p class="text-secondary mb-0">Our developers write clean, secure code to bring the design
+                                to life, ensuring your site is fast, responsive, and reliable.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="process-step animate-on-scroll delay-4">
+                            <div class="process-number">04</div>
+                            <h5 class="fw-bold">Grow & Support</h5>
+                            <p class="text-secondary mb-0">Launch is just the beginning. We use SEO and marketing to
+                                drive traffic and provide ongoing support to ensure your success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- ============================================= -->
-        <!-- 5. CTA: LBM BUSINESS SOLUTIONS - UNIQUE COOL COLOR (Moved up from Section 6) -->
+        <!-- 6. CTA (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="business-cta" class="py-5">
             <div class="container text-center animate-on-scroll">
-                <h2 class="fw-bold mb-3">Ready to Start Your Digital Journey?</h2>
+                <!-- CONTENT UPDATE: New H2 and text -->
+                <h2 class="fw-bold mb-3">Let's Build Your Digital Future</h2>
                 <p class="lead mb-4">Partner with LBM Solutions and leverage our expertise to accelerate your success.
                 </p>
                 <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5">Contact Us Today</a>
@@ -311,7 +373,7 @@
     </main>
 
     <!-- ============================================= -->
-    <!-- 6. FOOTER - Black Dark Background -->
+    <!-- 7. FOOTER -->
     <!-- ============================================= -->
     <footer class="text-white" style="background-color: var(--bs-dark-footer);">
         <div class="container pt-5 pb-3">
@@ -324,12 +386,15 @@
                 <div class="col-md-2">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
+                        <!-- FILE PATH UPDATE: Corrected paths -->
                         <li><a href="about.html" class="text-secondary text-decoration-none py-1 d-block">About Us</a>
                         </li>
                         <li><a href="services.html"
                                 class="text-secondary text-decoration-none py-1 d-block">Services</a></li>
-                        <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Portfolio</a></li>
-                        <li><a href="index.html#faq" class="text-secondary text-decoration-none py-1 d-block">FAQs</a>
+                        <li><a href="portfolio.html"
+                                class="text-secondary text-decoration-none py-1 d-block">Portfolio</a></li>
+                        <li><a href="../index.html#faq"
+                                class="text-secondary text-decoration-none py-1 d-block">FAQs</a>
                         </li>
                     </ul>
                 </div>
@@ -363,9 +428,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- FILE PATH UPDATE: Corrected path -->
     <script src="../assets/js/script.js"></script>
 
-    <!-- Custom Animation JavaScript using IntersectionObserver (REPLICATED from index.html) -->
+    <!-- Custom Animation JavaScript (Run Once) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const elements = document.querySelectorAll('.animate-on-scroll');
@@ -394,3 +460,4 @@
 </body>
 
 </html>
+

@@ -4,31 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBM Solutions - Web Services, Hosting & Domain Registration</title>
-    <!-- Bootstrap CSS CDN -->
+    <!-- CONTENT UPDATE: Title changed to be action-oriented -->
+    <title>LBM Solutions - Digital Growth Agency in Nigeria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Google Fonts Links -->
+    <!-- DESIGN UPDATE: Added Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Custom CSS (Defining the light/dark theme and animations) -->
     <style>
         /* Define Brand Colors for Light Theme */
-        
+        :root {
+            --bs-primary: #D77F21;
+            /* Rich Orange/Brown */
+            --bs-secondary: #666666;
+            /* Medium Gray */
+            --bs-main-text: #222222;
+            /* Primary text */
+            --bs-light-bg: #FFFFFF;
+            /* Primary Light */
+            --bs-alt-bg: #F5F5F5;
+            /* Alternate Light (Was #dbd8d8, changed to F5F5F5) */
+            --bs-card-border: #E0E0E0;
+            /* Light border */
+            --bs-dark-footer: #1F1F1F;
+            /* Footer */
+            --bs-cta-unique: #5A779C;
+            /* Unique CTA */
 
-        /* Hero Section Styling - Now light-themed */
-        #hero {
+            /* Font Definitions */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
             background-color: var(--bs-light-bg);
+            color: var(--bs-main-text);
+        }
+
+        h1, h2, h3, h4, h5, h6, .display-5, .lead {
+            font-family: var(--font-heading);
+        }
+
+        .bg-primary-custom { background-color: var(--bs-primary) !important; }
+        .text-primary-custom { color: var(--bs-primary) !important; }
+
+        .btn-primary-custom {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary-custom:hover {
+            background-color: #BD6D1A;
+            border-color: #BD6D1A;
+            box-shadow: 0 6px 12px rgba(215, 127, 33, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================= */
+        /* DESIGN UPDATE: Sleek Navbar */
+        /* ============================================= */
+        .navbar {
+            transition: background-color 0.3s ease-out, padding 0.3s ease-out;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--bs-light-bg) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Keep navbar-brand dark on transparent bg for hero image visibility */
+        .navbar .navbar-brand {
+             color: var(--bs-primary);
+        }
+        
+        /* Links are white on transparent, dark on scroll */
+        .navbar:not(.scrolled) .navbar-nav .nav-link {
+            color: white;
+        }
+         .navbar:not(.scrolled) .navbar-nav .nav-link.active {
+            color: var(--bs-primary) !important; /* Active link always primary */
+            border-bottom: 3px solid var(--bs-primary);
+            padding-bottom: 5px;
+        }
+        
+        .navbar.scrolled .navbar-nav .nav-link {
+            color: var(--bs-main-text);
+        }
+
+        .navbar.scrolled .navbar-nav .nav-link:hover {
+            color: var(--bs-primary);
+        }
+
+        .navbar.scrolled .navbar-nav .nav-link.active {
+            color: var(--bs-primary) !important;
+            font-weight: 600;
+            border-bottom: 3px solid var(--bs-primary);
+            padding-bottom: 5px;
+        }
+
+        /* ============================================= */
+        /* DESIGN UPDATE: Hero Section */
+        /* ============================================= */
+        #hero {
             background-image: url('assets/img/hero.png');
             background-size: cover;
             background-position: center;
-            min-height: 500px;
+            min-height: 600px;
             height: 100vh;
-            /* color: var(--bs-main-text); */
             color: white;
-            /* Dark text on light background */
             position: relative;
             z-index: 0;
             display: flex;
@@ -42,8 +131,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(17, 17, 17, 0.7);
-            /* Light overlay for text clarity */
+            /* Subtle gradient for better text readability */
+            background: linear-gradient(0deg, rgba(17, 17, 17, 0.8) 0%, rgba(17, 17, 17, 0.6) 70%, rgba(17, 17, 17, 0.4) 100%);
             z-index: 1;
         }
 
@@ -51,11 +140,17 @@
             position: relative;
             z-index: 2;
         }
+        
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+        }
 
         /* ============================================= */
-        /* WOW CARDS: 3D Mission/Vision Cards (Sleek Light) */
+        /* Mission/Vision Cards (Kept from original) */
         /* ============================================= */
-        /* Mission/Vision Cards use the white background with dark accents */
         .vision-card,
         .mission-card {
             background: var(--bs-light-bg);
@@ -63,10 +158,10 @@
             border-radius: 1.5rem;
             padding: 2.5rem 2rem;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            /* Lighter shadow for light theme */
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s;
             transform-style: preserve-3d;
             border: 1px solid var(--bs-card-border);
+            height: 100%; /* Ensure cards are same height */
         }
 
         .vision-card:hover,
@@ -80,119 +175,135 @@
             width: 50px;
             height: 50px;
             fill: var(--bs-main-text);
-            /* Icons are dark on light cards */
-        }
-
-        .mission-card h4,
-        .vision-card h4 {
-            color: var(--bs-main-text);
         }
 
 
         /* ============================================= */
-        /* WOW CARDS: Our Services Cards (Alternating Light Background) */
+        /* DESIGN UPDATE: New Service Solution Cards */
         /* ============================================= */
-        #our-services {
-            background-color: var(--bs-alt-bg);
-            /* Alternate light background for contrast */
+        #our-solutions {
+            background-color: var(--bs-light-bg); /* White background */
             color: var(--bs-main-text);
         }
 
-        .service-card-home {
-            background-color: var(--bs-light-bg);
-            /* White cards */
-            color: var(--bs-main-text);
+        .solution-card {
+            background-color: var(--bs-alt-bg); /* Light gray cards */
             border-radius: 1rem;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             height: 100%;
-            transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, border 0.4s;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            border: 2px solid var(--bs-card-border);
+            transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+            border: 1px solid var(--bs-card-border);
+            position: relative;
+            overflow: hidden; /* To contain the number */
         }
 
-        .service-card-home:hover {
+        .solution-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border: 2px solid var(--bs-primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--bs-primary);
         }
 
-        .service-icon-box {
-            background-color: #DDDDDD;
-            /* Light gray neutral box */
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
+        /* Large background number */
+        .solution-card::before {
+            content: attr(data-number);
+            position: absolute;
+            top: -20px;
+            right: 15px;
+            font-size: 100px;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.04);
+            z-index: 1;
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+        
+        .solution-card:hover::before {
+            color: rgba(0, 0, 0, 0.06);
         }
 
-        .service-card-home:hover .service-icon-box {
-            background-color: var(--bs-primary);
-            /* Orange on hover */
+        /* Icon style */
+        .solution-icon {
+            font-size: 2.5rem; /* 40px */
+            color: var(--bs-primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .solution-card:hover .solution-icon {
             transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(215, 127, 33, 0.5);
         }
 
-        /* Icon color change on hover */
-        .service-icon-box svg {
-            fill: var(--bs-main-text);
-            /* Default icons are dark */
-            transition: fill 0.3s ease;
-        }
-
-        .service-card-home:hover .service-icon-box svg {
-            fill: white;
-            /* Icons are white inside orange box on hover */
-        }
-
-        .service-card-home h5 {
-            color: var(--bs-main-text) !important;
+        /* Card content must be above the number */
+        .solution-card > * {
+            position: relative;
+            z-index: 2;
         }
 
 
-        /* Newsletter Section - EXCLUSIVE ORANGE */
+        /* Newsletter Section */
         #newsletter {
             background-color: var(--bs-primary);
             color: white;
         }
 
-        /* CTA Section - Dark Blue/Green Hue for Contrast */
+        /* CTA Section */
         #business-cta {
             background-color: var(--bs-cta-unique);
             color: white;
         }
 
-        /* Footer - Dark background for strong separation */
+        /* Footer */
         footer {
             background-color: var(--bs-dark-footer) !important;
         }
 
-        /* FAQ Styling */
+        /* ============================================= */
+        /* DESIGN UPDATE: Sleek FAQ Accordion */
+        /* ============================================= */
         #faq {
             background-color: var(--bs-light-bg);
         }
-
-        .accordion-button:not(.collapsed) {
-            color: var(--bs-main-text);
-            background-color: var(--bs-alt-bg);
-            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        .accordion-button:focus {
-            box-shadow: 0 0 0 0.25rem rgba(215, 127, 33, 0.25);
-            /* Orange focus ring */
+        
+        .accordion-item {
+            border: none; /* Remove default border */
+            border-bottom: 1px solid var(--bs-card-border); /* Simple separator */
+            border-radius: 0 !important; /* Remove rounding */
         }
 
         .accordion-button {
             background-color: var(--bs-light-bg);
+            font-weight: 600;
+            padding: 1.5rem 1rem;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            color: var(--bs-primary);
+            background-color: var(--bs-alt-bg);
+            box-shadow: none; /* Remove inset shadow */
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(215, 127, 33, 0.25); /* Orange focus ring */
+            border-color: transparent;
+        }
+        
+        /* Custom accordion icon */
+        .accordion-button::after {
+            font-family: "bootstrap-icons";
+            content: "\F4FE"; /* bi-plus-lg */
+            background-image: none; /* Remove default Bootstrap icon */
+            font-weight: 900;
+            transition: transform 0.2s ease-in-out;
+        }
+        .accordion-button:not(.collapsed)::after {
+            content: "\F463"; /* bi-dash-lg */
+            transform: rotate(0deg); /* No rotation needed for dash */
         }
 
 
         /* ============================================= */
-        /* SCROLL ANIMATION CLASSES (Run Once is handled in JS) */
+        /* SCROLL ANIMATION CLASSES */
         /* ============================================= */
         .animate-on-scroll {
             opacity: 0;
@@ -205,35 +316,22 @@
             transform: translateY(0);
         }
 
-        .delay-1 {
-            transition-delay: 0.15s;
-        }
-
-        .delay-2 {
-            transition-delay: 0.3s;
-        }
-
-        .delay-3 {
-            transition-delay: 0.45s;
-        }
-
-        .delay-4 {
-            transition-delay: 0.6s;
-        }
-
-        .delay-5 {
-            transition-delay: 0.75s;
-        }
+        .delay-1 { transition-delay: 0.15s; }
+        .delay-2 { transition-delay: 0.3s; }
+        .delay-3 { transition-delay: 0.45s; }
+        .delay-4 { transition-delay: 0.6s; }
+        .delay-5 { transition-delay: 0.75s; }
     </style>
 </head>
 
 <body>
 
     <!-- ============================================= -->
-    <!-- 1. NAVIGATION BAR (HEADER) - Light Theme (5-Item Nav) -->
+    <!-- 1. HEADER / NAVBAR (DESIGN UPDATED) -->
     <!-- ============================================= -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <!-- DESIGN UPDATE: Added .fixed-top, .navbar-dark, .bg-transparent -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top py-3">
             <div class="container">
                 <a class="navbar-brand fw-bold text-primary-custom" href="index.html">LBM Solutions</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -257,75 +355,59 @@
 
     <main>
         <!-- ============================================= -->
-        <!-- 2. HERO SECTION (Light Background, Dark Text, 2 CTAs) -->
-        <!-- *Updated to include Domain Search Form* -->
+        <!-- 2. HERO SECTION (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="hero">
-            <div class="container py-5 text-center hero-content">
-                <h1 class="display-5 fw-bold mb-4 animate-on-scroll">LBM Internet Solution</h1>
+            <div class="container text-center hero-content">
+                <!-- CONTENT UPDATE: New H1 and text -->
+                <h1 class="display-4 fw-bold mb-4 animate-on-scroll">We Build Digital Experiences That Grow Your
+                    Business</h1>
                 <p class="lead mb-4 col-md-8 mx-auto animate-on-scroll delay-1">
-                    We are pleased to introduce LBM Solutions, a leading web services provider. Our products are
-                    designed to provide you with efficient, secure and clear solutions.
+                    Stop just having a website. Start using it. We're a digital agency in Nigeria that partners
+                    with businesses like yours to increase leads, drive sales, and build a brand that matters.
                 </p>
 
                 <div class="mt-4 animate-on-scroll delay-2">
-                    <a href="services.html" class="btn btn-primary-custom btn-lg rounded-pill px-4 me-3">Explore our
-                        Services</a>
-                    <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-4">Work With Us</a>
+                    <!-- CONTENT UPDATE: New buttons -->
+                    <a href="pages/contact.html" class="btn btn-primary-custom btn-lg rounded-pill px-4 me-3">Start
+                        Your Project</a>
+                    <a href="pages/portfolio.html" class="btn btn-light btn-lg rounded-pill px-4">See Our Work</a>
                 </div>
 
-                <!-- Domain Search Feature (New) -->
-                <!-- <div class="row justify-content-center mt-5 animate-on-scroll delay-3">
-                    <div class="col-lg-8">
-                        <form class="d-flex shadow-lg rounded-pill p-1 bg-white border border-secondary"
-                            style="border-width: 2px !important;">
-                            <input class="form-control form-control-lg border-0 bg-transparent ps-4" type="search"
-                                placeholder="Search for your perfect domain name..." aria-label="Domain Search">
-                            <select class="form-select form-select-lg border-0 w-auto bg-transparent">
-                                <option>.com</option>
-                                <option>.net</option>
-                                <option>.org</option>
-                                <option>.ng</option>
-                            </select>
-                            <button class="btn btn-dark btn-lg rounded-pill px-4" type="submit">Check</button>
-                        </form>
-                    </div>
-                </div> -->
-                <!-- End Domain Search -->
             </div>
         </section>
 
         <!-- ============================================= -->
-        <!-- 3. MISSION & VISION (Alternate Light Background) -->
+        <!-- 3. MISSION/VISION (Kept from original) -->
         <!-- ============================================= -->
         <section id="mission-vision" class="py-5" style="background-color: var(--bs-alt-bg);">
             <div class="container">
                 <div class="row g-5 justify-content-center">
-                    <!-- Mission Card -->
                     <div class="col-md-5">
                         <div class="mission-card text-center animate-on-scroll delay-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-rocket-fill card-icon-lg mb-3" viewBox="0 0 16 16">
                                 <path
                                     d="M12.173 1.583a1.5 1.5 0 0 1 2.457 1.488l-1.353 3.513c-.097.252-.164.498-.21.685l-1.892 5.688a2 2 0 0 1-1.393 1.25c-.246.066-.51.107-.796.107-.55 0-1.106-.11-1.637-.323l-.117-.044a.5.5 0 0 1-.392-.1L.116 10.155a.5.5 0 0 1-.16-.39.5.5 0 0 1 .15-.36l.732-.821a.5.5 0 0 1 .6-.1l3.545 1.417 1.417-3.545a.5.5 0 0 1 .1-.6l.821-.732a.5.5 0 0 1 .39-.15z" />
                             </svg>
                             <h4 class="fw-bold">Our Mission</h4>
-                            <p class="mb-0">To empower businesses through cutting-edge technology, reliable hosting, and
+                            <p class="mb-0 text-secondary">To empower businesses through cutting-edge technology,
+                                reliable hosting, and
                                 strategic digital solutions that foster growth and security.</p>
                         </div>
                     </div>
 
-                    <!-- Vision Card -->
                     <div class="col-md-5">
                         <div class="vision-card text-center animate-on-scroll delay-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
                                 class="bi bi-eye-fill card-icon-lg mb-3" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
                                 <path
                                     d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
                             </svg>
                             <h4 class="fw-bold">Our Vision</h4>
-                            <p class="mb-0">To be the most trusted and leading provider of web infrastructure and
+                            <p class="mb-0 text-secondary">To be the most trusted and leading provider of web
+                                infrastructure and
                                 creative digital services across the African continent.</p>
                         </div>
                     </div>
@@ -333,98 +415,80 @@
             </div>
         </section>
 
-
         <!-- ============================================= -->
-        <!-- 4. ABOUT LBM SOLUTIONS SECTION (Primary Light Background - White) -->
+        <!-- 4. ABOUT INTRO (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="about-intro" class="py-5" style="background-color: var(--bs-light-bg);">
             <div class="container">
-                <h2 class="fw-bold text-center text-primary-custom mb-5 animate-on-scroll">About LBM Solutions</h2>
+                <h2 class="fw-bold text-center text-primary-custom mb-5 animate-on-scroll">We Are Your Growth Partners
+                </h2>
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6 order-lg-2 animate-on-scroll delay-2">
-                        <!-- Image placeholder -->
-                        <img src="assets/img/about2 (2).png"
-                            class="img-fluid rounded-lg shadow" alt="Modern Office Setup" style="border-radius: 1rem;">
+                        <img src="assets/img/about2 (2).png" class="img-fluid rounded-lg shadow"
+                            alt="Modern Office Setup" style="border-radius: 1rem;">
                     </div>
                     <div class="col-lg-6 order-lg-1 animate-on-scroll delay-1">
-                        <p class="lead">LBM Solutions is a client-focused, global enterprise principally engaged in the
-                            design, development, deployment of websites, domain name registration, and web hosting
-                            services.</p>
-                        <p class="text-secondary">We are pleased to introduce to you LBM Solutions, a leading web
-                            services solutions provider in Nigeria. Our products and services have been designed and
-                            created to provide you with efficient, secure and clear solutions. We serve both government
-                            and commercial clients with reliable, secure, and clear digital solutions.</p>
-                        <a href="about.html" class="btn btn-outline-dark rounded-pill mt-3 px-4">Read Our Full Story</a>
+                        <!-- CONTENT UPDATE: New text -->
+                        <p class="lead">LBM Solutions is a client-focused digital agency engaged in the design,
+                            development, and deployment of websites, web applications, and growth strategies.</p>
+                        <p class="text-secondary">We don't just build websites; we build the engines for your business.
+                            We serve both government and commercial clients, transforming their digital presence from a
+                            simple cost into a reliable revenue driver.</p>
+                        <a href="pages/about.html" class="btn btn-outline-dark rounded-pill mt-3 px-4">Read Our Full
+                            Story</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ============================================= -->
-        <!-- 5. OUR SERVICES SECTION (Alternate Light Background, Sleek Cards) -->
+        <!-- 5. OUR SOLUTIONS (CONTENT & DESIGN UPDATED) -->
         <!-- ============================================= -->
-        <section id="our-services" class="py-5" style="background-color: var(--bs-alt-bg);">
+        <section id="our-solutions" class="py-5" style="background-color: var(--bs-alt-bg);">
             <div class="container">
-                <h2 class="text-center fw-bold mb-5 animate-on-scroll">Our Services</h2>
+                <h2 class="text-center fw-bold mb-5 animate-on-scroll">Our Solutions</h2>
 
                 <div class="row row-cols-1 row-cols-md-3 g-4">
 
-                    <!-- Service 1: Web Design & Dev -->
+                    <!-- Solution 1 -->
                     <div class="col animate-on-scroll delay-1">
-                        <div class="service-card-home text-center">
-                            <div class="service-icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
-                                    class="bi bi-code-slash" viewBox="0 0 16 16">
-                                    <path
-                                        d="M10.198 1.488a.5.5 0 0 1 .494.398l1.32 12a.5.5 0 0 1-.494.614l-1.32-12a.5.5 0 0 1 .494-.614zM4.774 1.488a.5.5 0 0 0-.494.614l-1.32 12a.5.5 0 0 0 .494.614l1.32-12a.5.5 0 0 0-.494-.614z" />
-                                </svg>
-                            </div>
-                            <h5 class="fw-bold">Web Design and Development</h5>
-                            <p class="text-secondary">Custom, high-performance websites built to deliver results and
-                                drive conversions.</p>
+                        <div class="solution-card" data-number="01">
+                            <i class="bi bi-palette-fill solution-icon"></i>
+                            <h5 class="fw-bold">Brand Strategy & UI/UX Design</h5>
+                            <p class="text-secondary">We build your brand identity and design an intuitive user
+                                experience that builds trust and guides visitors to action.</p>
                         </div>
                     </div>
 
-                    <!-- Service 2: Web Hosting -->
+                    <!-- Solution 2 -->
                     <div class="col animate-on-scroll delay-2">
-                        <div class="service-card-home text-center">
-                            <div class="service-icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
-                                    class="bi bi-server" viewBox="0 0 16 16">
-                                    <path
-                                        d="M1.333 2.083c.314 0 .612.028.895.083a3.9 3.9 0 0 1 .632.148c.184.053.385.111.603.181a7.7 7.7 0 0 0 .57.21c.231.085.492.179.771.264.444.137.954.269 1.5.334C8.428 3.578 9.215 3.667 10 3.667c.785 0 1.572-.089 2.339-.334.546-.137 1.056-.269 1.5-.334.279-.085.54-.179.771-.264.198-.073.399-.131.572-.181.247-.07.48-.138.697-.205.283-.08.577-.145.895-.178.291-.031.597-.05.903-.05.314 0 .612.028.895.083a3.9 3.9 0 0 1 .632.148c.184.053.385.111.603.181a7.7 7.7 0 0 0 .57.21c.231.085.492.179.771.264.444.137.954.269 1.5.334C8.428 3.578 9.215 3.667 10 3.667c.785 0 1.572-.089 2.339-.334.546-.137 1.056-.269 1.5-.334.279-.085.54-.179.771-.264.198-.073.399-.131.572-.181.247-.07.48-.138.697-.205.283-.08.577-.145.895-.178.291-.031.597-.05.903-.05" />
-                                </svg>
-                            </div>
-                            <h5 class="fw-bold">Web Site Hosting</h5>
-                            <p class="text-secondary">Reliable, fast, and secure cloud hosting solutions with guaranteed
-                                99.9% uptime.</p>
+                        <div class="solution-card" data-number="02">
+                            <i class="bi bi-code-slash solution-icon"></i>
+                            <h5 class="fw-bold">Web & E-Commerce Development</h5>
+                            <p class="text-secondary">From corporate sites to secure e-commerce, we build fast,
+                                responsive, and secure websites that work 24/7 for you.</p>
                         </div>
                     </div>
 
-                    <!-- Service 3: Domain Registration -->
+                    <!-- Solution 3 -->
                     <div class="col animate-on-scroll delay-3">
-                        <div class="service-card-home text-center">
-                            <div class="service-icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
-                                    class="bi bi-globe" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.931 11.43 4.706 11.45 5.5 11.45c.974 0 1.884-.131 2.5-.237a.38.38 0 0 0-.27-.723c-.114.02-.271.037-.433.056-.341.038-.727.06-.998.06-.289 0-.616-.026-1.002-.078a.8.8 0 0 1-.776-.11l-.816.559a6.9 6.9 0 0 1-1.086 1.488zM8 2.5a.5.5 0 0 1 .5.5v1.5a.5.5 0 0 1-1 0V3a.5.5 0 0 1 .5-.5z" />
-                                </svg>
-                            </div>
-                            <h5 class="fw-bold">Domain Name Registration</h5>
-                            <p class="text-secondary">Secure your brand online with effortless domain name search and
-                                registration.</p>
+                        <div class="solution-card" data-number="03">
+                            <i class="bi bi-graph-up-arrow solution-icon"></i>
+                            <h5 class="fw-bold">Digital Marketing & Growth</h5>
+                            <p class="text-secondary">A great website is just the start. We use SEO, SMM, and PPC to
+                                turn your website into a powerful lead-generation engine.</p>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-5 animate-on-scroll delay-4">
-                    <a href="services.html" class="btn btn-primary-custom btn-lg rounded-pill px-5">LEARN MORE</a>
+                    <a href="pages/services.html" class="btn btn-primary-custom btn-lg rounded-pill px-5">See All
+                        Services</a>
                 </div>
             </div>
         </section>
 
         <!-- ============================================= -->
-        <!-- 6. FREQUENTLY ASKED QUESTIONS (FAQ) (NEW SECTION) -->
+        <!-- 6. FAQ (CONTENT & DESIGN UPDATED) -->
         <!-- ============================================= -->
         <section id="faq" class="py-5" style="background-color: var(--bs-light-bg);">
             <div class="container">
@@ -433,81 +497,81 @@
                     <div class="col-lg-10 animate-on-scroll delay-1">
                         <div class="accordion" id="faqAccordion">
 
-                            <!-- FAQ Item 1: What services do you offer? -->
-                            <div class="accordion-item shadow mb-3" style="border-radius: 0.5rem;">
+                            <!-- FAQ 1 (Content Updated) -->
+                            <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        What primary services does LBM Solutions offer?
+                                        What's the difference between LBM and a freelance developer?
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary">
-                                        LBM Solutions specializes in **Web Design and Development**, **Secure Web
-                                        Hosting** (Linux/Windows), **Domain Name Registration** (supporting various
-                                        TLDs), and **Internet Marketing & SEO** services.
+                                        We are a full-service agency. A freelancer might build you a website, but we
+                                        build you a complete business strategy. We handle your branding, design,
+                                        development, marketing, and hosting, ensuring every piece works together to
+                                        achieve your growth goals.
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ Item 2: Hosting Uptime -->
-                            <div class="accordion-item shadow mb-3" style="border-radius: 0.5rem;">
+                            <!-- FAQ 2 (Content Updated) -->
+                            <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed fw-bold" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                                         aria-controls="collapseTwo">
-                                        What kind of uptime guarantee do you offer for web hosting?
+                                        How long does a typical website project take?
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary">
-                                        We provide a **99.9% uptime guarantee** on all our hosting plans. Our
-                                        infrastructure is designed for high reliability, ensuring your website is
-                                        available to your customers around the clock.
+                                        A standard corporate website typically takes 4-6 weeks from discovery to launch.
+                                        Complex e-commerce or custom web applications can take 8-12+ weeks. We follow a
+                                        structured process to ensure we meet our deadlines every time.
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ Item 3: Domain TLDs -->
-                            <div class="accordion-item shadow mb-3" style="border-radius: 0.5rem;">
+                            <!-- FAQ 3 (Content Updated) -->
+                            <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed fw-bold" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        Which Top-Level Domains (TLDs) can I register through LBM?
+                                        Do you include hosting and domain registration with your websites?
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary">
-                                        We support a wide range of TLDs including popular options like **.com, .net,
-                                        .org, .info, .biz**, as well as local domains like **.ng** and various others
-                                        like **.co.uk, .ca, .cc, and .de**.
+                                        Yes, all our web development projects include one year of free premium cloud
+                                        hosting and domain registration. We provide a 99.9% uptime guarantee, so you can
+                                        focus on your business, not on technical issues.
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- FAQ Item 4: Do you offer Internet Marketing services? -->
-                            <div class="accordion-item shadow" style="border-radius: 0.5rem;">
+                            <!-- FAQ 4 (Content Updated) -->
+                            <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingFour">
                                     <button class="accordion-button collapsed fw-bold" type="button"
                                         data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
                                         aria-controls="collapseFour">
-                                        Do you provide SEO and online marketing services?
+                                        What happens after my website is launched?
                                     </button>
                                 </h2>
                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                                     data-bs-parent="#faqAccordion">
                                     <div class="accordion-body text-secondary">
-                                        Yes, our Internet Marketing solutions cover Search Engine Optimization (SEO),
-                                        content strategy, and online promotion tailored to drive targeted traffic and
-                                        increase your business visibility.
+                                        Launch is just the beginning. We offer ongoing support and maintenance packages
+                                        to keep your site secure and up-to-date. We also transition many clients into our
+                                        Digital Marketing & Growth solution to start driving traffic and leads.
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -515,25 +579,25 @@
         </section>
 
         <!-- ============================================= -->
-        <!-- 7. CTA: LBM BUSINESS SOLUTIONS - UNIQUE COOL COLOR (Moved up from Section 8) -->
+        <!-- 7. CTA (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="business-cta" class="py-5">
             <div class="container text-center animate-on-scroll">
-                <h2 class="fw-bold mb-3">LBM Business Solutions</h2>
-                <p class="lead mb-4">At LBM Solutions, business success is what we aim to achieve. To propel your growth
-                    and accelerate your success, let's discuss your next project.</p>
-                <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5">Contact Us</a>
+                <h2 class="fw-bold mb-3">Ready to Start Your Project?</h2>
+                <p class="lead mb-4">You've seen what we do. Let's talk about what we can do for you.
+                    Contact us for a free, no-obligation consultation.</p>
+                <a href="pages/contact.html" class="btn btn-light btn-lg rounded-pill px-5">Get in Touch</a>
             </div>
         </section>
 
         <!-- ============================================= -->
-        <!-- 8. NEWSLETTER & SUBSCRIPTION - EXCLUSIVE ORANGE SECTION (Moved down from Section 7) -->
+        <!-- 8. NEWSLETTER (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="newsletter" class="py-5">
             <div class="container text-center animate-on-scroll">
-                <h2 class="fw-bold mb-3">Subscribe to our Weekly Newsletter!</h2>
-                <p class="lead mb-4">Get weekly inspiration and insights on online marketing, no spam guarantee, we
-                    promise!</p>
+                <h2 class="fw-bold mb-3">Get Digital Insights</h2>
+                <p class="lead mb-4">Join our newsletter for weekly insights on digital marketing, web trends, and
+                    growth strategies. No spam, just value.</p>
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <form class="d-flex animate-on-scroll delay-1">
@@ -550,7 +614,7 @@
     </main>
 
     <!-- ============================================= -->
-    <!-- 9. FOOTER - Black Dark Background -->
+    <!-- 9. FOOTER -->
     <!-- ============================================= -->
     <footer class="text-white" style="background-color: var(--bs-dark-footer);">
         <div class="container pt-5 pb-3">
@@ -563,18 +627,21 @@
                 <div class="col-md-2">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="about.html" class="text-secondary text-decoration-none py-1 d-block">About Us</a>
+                        <li><a href="pages/about.html" class="text-secondary text-decoration-none py-1 d-block">About
+                                Us</a>
                         </li>
-                        <li><a href="services.html"
+                        <li><a href="pages/services.html"
                                 class="text-secondary text-decoration-none py-1 d-block">Services</a></li>
-                        <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Portfolio</a></li>
+                        <li><a href="pages/portfolio.html"
+                                class="text-secondary text-decoration-none py-1 d-block">Portfolio</a></li>
                         <li><a href="#faq" class="text-secondary text-decoration-none py-1 d-block">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3">
                     <h5>Support & Legal</h5>
                     <ul class="list-unstyled">
-                        <li><a href="contact.html" class="text-secondary text-decoration-none py-1 d-block">Contact
+                        <li><a href="pages/contact.html"
+                                class="text-secondary text-decoration-none py-1 d-block">Contact
                                 Us</a></li>
                         <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Career</a></li>
                         <li><a href="#" class="text-secondary text-decoration-none py-1 d-block">Support</a></li>
@@ -597,22 +664,39 @@
     </footer>
 
 
-    <!-- Bootstrap JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-    <!-- Custom Animation JavaScript using IntersectionObserver -->
+    
+    <!-- ============================================= -->
+    <!-- 10. JAVASCRIPT (DESIGN UPDATES) -->
+    <!-- ============================================= -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            // --- Navbar Scroll Effect ---
+            const navbar = document.getElementById('main-navbar');
+            if (navbar) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                        navbar.classList.remove('navbar-dark', 'bg-transparent');
+                        navbar.classList.add('navbar-light');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                        navbar.classList.remove('navbar-light');
+                        navbar.classList.add('navbar-dark', 'bg-transparent');
+                    }
+                });
+            }
 
+            // --- Animate On Scroll (Run Once) ---
+            const elements = document.querySelectorAll('.animate-on-scroll');
             const observerOptions = {
                 root: null, // viewport
                 rootMargin: '0px',
                 threshold: 0.05
             };
-
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -631,3 +715,4 @@
 </body>
 
 </html>
+

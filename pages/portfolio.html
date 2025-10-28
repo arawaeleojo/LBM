@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LBM Solutions - Our Portfolio of Digital Success</title>
+    <!-- CONTENT UPDATE: Title changed to be results-focused -->
+    <title>Our Work | LBM Solutions Case Studies</title>
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -12,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
         rel="stylesheet">
+    <!-- CONTENT UPDATE: Corrected CSS path -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <!-- Custom CSS (Consistent Styling) -->
     <style>
@@ -108,7 +110,10 @@
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            cursor: pointer;
+            /* Removed cursor: pointer; as the card itself isn't one link */
+            height: 100%; /* Ensure cards are same height */
+            display: flex; /* Use flexbox to structure card */
+            flex-direction: column; /* Stack image and details vertically */
         }
 
         .portfolio-card:hover {
@@ -119,18 +124,32 @@
         .portfolio-card img {
             transition: transform 0.5s ease-out;
             width: 100%;
-            height: auto;
+            height: 250px; /* Fixed height for images */
+            object-fit: cover; /* Ensure images cover the area */
         }
 
         .portfolio-card:hover img {
             transform: scale(1.05);
         }
+        
+        .project-details-wrapper {
+            /* New wrapper to allow for hover effect on image without affecting text */
+            overflow: hidden; /* Clips the scaling image */
+            border-bottom: 1px solid var(--bs-card-border);
+        }
 
         .project-details {
             padding: 1.5rem;
-            text-align: center;
+            /* CONTENT UPDATE: Changed text-align to left for professional look */
+            text-align: left;
+            flex-grow: 1; /* Allows details to fill remaining card space */
+            display: flex;
+            flex-direction: column;
         }
-
+        
+        .project-details .btn {
+            margin-top: auto; /* Pushes button to the bottom of the card */
+        }
 
 
         /* ============================================= */
@@ -189,13 +208,15 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
             <div class="container">
-                <a class="navbar-brand fw-bold text-primary-custom" href="index.html">LBM Solutions</a>
+                <!-- CONTENT UPDATE: Corrected link path -->
+                <a class="navbar-brand fw-bold text-primary-custom" href="../index.html">LBM Solutions</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
+                        <!-- CONTENT UPDATE: Corrected link paths -->
                         <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -212,113 +233,187 @@
 
     <main>
         <!-- ============================================= -->
-        <!-- 2. PAGE HERO SECTION (Updated to two-column layout) -->
+        <!-- 2. PAGE HERO SECTION (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="portfolio-hero" class="py-5">
             <div class="container py-5">
                 <div class="row align-items-center g-5">
                     <!-- Text Content (Left Side) -->
                     <div class="col-lg-6 animate-on-scroll delay-1">
-                        <h1 class="display-5 fw-bold text-primary-custom">Our Work. Your Digital Success.</h1>
-                        <p class="lead text-secondary mt-3">We turn digital aspirations into market-leading reality. See
-                            the results of our expertise in design, hosting, and marketing.</p>
-                        <p class="text-secondary mt-4">Explore a selection of our recent projects, showcasing the
-                            diverse capabilities in e-commerce, corporate sites, and robust web applications.</p>
-                        <a href="#portfolio-gallery" class="btn btn-primary-custom rounded-pill px-4 mt-3">View Projects
-                            Below</a>
+                        <!-- CONTENT UPDATE: New H1 and text -->
+                        <h1 class="display-5 fw-bold text-primary-custom">Proof. Not Promises.</h1>
+                        <p class="lead text-secondary mt-3">We don't just talk about growth; we deliver it. Our work is
+                            our proof.</p>
+                        <p class="text-secondary mt-4">Explore our portfolio of case studies to see how we've
+                            transformed businesses in Nigeria with strategic branding, web development, and marketing.
+                        </p>
+                        <a href="#portfolio-gallery" class="btn btn-primary-custom rounded-pill px-4 mt-3">View Our
+                            Work</a>
                     </div>
 
                     <!-- Image Content (Right Side) -->
                     <div class="col-lg-6 text-center animate-on-scroll delay-3">
-                        <img src="../assets/img/portfolio.png"
-                            class="img-fluid rounded-lg shadow-lg" alt="Portfolio Showcase"
-                            style="border-radius: 1rem;">
+                        <!-- CONTENT UPDATE: Corrected image path -->
+                        <img src="../assets/img/portfolio.png" class="img-fluid rounded-lg shadow-lg"
+                            alt="Portfolio Showcase" style="border-radius: 1rem;">
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ============================================= -->
-        <!-- 3. PORTFOLIO GALLERY -->
+        <!-- 3. PORTFOLIO GALLERY (CONTENT UPDATED TO CASE STUDIES) -->
         <!-- ============================================= -->
         <section id="portfolio-gallery" class="py-5" style="background-color: var(--bs-light-bg);">
             <div class="container">
 
-                <h2 class="fw-bold text-center mb-5 animate-on-scroll delay-3">Featured Projects</h2>
-
-                <!-- Filter Buttons REMOVED -->
+                <h2 class="fw-bold text-center mb-5 animate-on-scroll delay-3">Featured Case Studies</h2>
 
                 <!-- Project Grid (3 columns) -->
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
 
                     <!-- Project 1: E-Commerce Platform -->
                     <div class="col">
-                        <div class="portfolio-card animate-on-scroll delay-4" data-category="ecommerce">
-                            <img src="../assets/img/portfolio1.png"
-                                class="card-img-top" alt="E-Commerce Project Mockup">
+                        <div class="portfolio-card animate-on-scroll delay-4">
+                            <div class="project-details-wrapper">
+                                <img src="../assets/img/portfolio1.png" class="card-img-top"
+                                    alt="E-Commerce Project Mockup">
+                            </div>
+                            <!-- CONTENT UPDATE: Rewritten as mini case study -->
                             <div class="project-details">
-                                <h5 class="fw-bold">Secured Marketplace App</h5>
-                                <p class="text-secondary"><small>Category: E-Commerce & Web App</small></p>
+                                <div>
+                                    <span class="badge bg-primary-custom text-uppercase mb-2">E-Commerce</span>
+                                    <h5 class="fw-bold">Secured Marketplace App</h5>
+                                    <p class="text-secondary mb-2"><small><strong>The Challenge:</strong> Client needed
+                                            a secure, multi-vendor platform to handle digital transactions.</small></p>
+                                    <p class="text-secondary mb-3"><small><strong>Our Solution:</strong> We built a
+                                            custom e-commerce app with integrated payments and a secure vendor
+                                            dashboard.</small></p>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-dark btn-sm rounded-pill mt-3">Get a
+                                    Similar Solution</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2: Corporate Website -->
                     <div class="col">
-                        <div class="portfolio-card animate-on-scroll delay-5" data-category="design">
-                            <img src="../assets/img/portfolio6.png"
-                                class="card-img-top" alt="Corporate Website Project Mockup">
+                        <div class="portfolio-card animate-on-scroll delay-5">
+                            <div class="project-details-wrapper">
+                                <img src="../assets/img/portfolio6.png" class="card-img-top"
+                                    alt="Corporate Website Project Mockup">
+                            </div>
+                            <!-- CONTENT UPDATE: Rewritten as mini case study -->
                             <div class="project-details">
-                                <h5 class="fw-bold">Global Consulting Site</h5>
-                                <p class="text-secondary"><small>Category: Web Design & Development</small></p>
+                                <div>
+                                    <span class="badge bg-primary-custom text-uppercase mb-2">Web Design</span>
+                                    <h5 class="fw-bold">Global Consulting Site</h5>
+                                    <p class="text-secondary mb-2"><small><strong>The Challenge:</strong> Client's old
+                                            site was dated, slow, and failed to capture their premium brand
+                                            identity.</small></p>
+                                    <p class="text-secondary mb-3"><small><strong>Our Solution:</strong> A full re-brand
+                                            and a fast, responsive corporate site built to establish authority and
+                                            capture leads.</small></p>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-dark btn-sm rounded-pill mt-3">Get a
+                                    Similar Solution</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 3: Domain & Hosting Interface -->
                     <div class="col">
-                        <div class="portfolio-card animate-on-scroll delay-6" data-category="hosting">
-                            <img src="../assets/img/portfolio2.png"
-                                class="card-img-top" alt="Hosting UI Project Mockup">
+                        <div class="portfolio-card animate-on-scroll delay-6">
+                            <div class="project-details-wrapper">
+                                <img src="../assets/img/portfolio2.png" class="card-img-top"
+                                    alt="Hosting UI Project Mockup">
+                            </div>
+                            <!-- CONTENT UPDATE: Rewritten as mini case study -->
                             <div class="project-details">
-                                <h5 class="fw-bold">Client Hosting Dashboard</h5>
-                                <p class="text-secondary"><small>Category: Web Site Hosting</small></p>
+                                <div>
+                                    <span class="badge bg-primary-custom text-uppercase mb-2">Web Application</span>
+                                    <h5 class="fw-bold">Client Hosting Dashboard</h5>
+                                    <p class="text-secondary mb-2"><small><strong>The Challenge:</strong> Lacked a
+                                            central, easy-to-use hub for clients to manage their services.</small></p>
+                                    <p class="text-secondary mb-3"><small><strong>Our Solution:</strong> Designed and
+                                            built a custom web application for clients to manage hosting, domains, and
+                                            support tickets.</small></p>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-dark btn-sm rounded-pill mt-3">Get a
+                                    Similar Solution</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 4: Marketing Landing Page -->
                     <div class="col">
-                        <div class="portfolio-card animate-on-scroll delay-7" data-category="marketing">
-                            <img src="../assets/img/portfolio3.png"
-                                class="card-img-top" alt="Marketing Landing Page Mockup">
+                        <div class="portfolio-card animate-on-scroll delay-7">
+                            <div class="project-details-wrapper">
+                                <img src="../assets/img/portfolio3.png" class="card-img-top"
+                                    alt="Marketing Landing Page Mockup">
+                            </div>
+                            <!-- CONTENT UPDATE: Rewritten as mini case study -->
                             <div class="project-details">
-                                <h5 class="fw-bold">Lead Generation Campaign</h5>
-                                <p class="text-secondary"><small>Category: Web Site Marketing</small></p>
+                                <div>
+                                    <span class="badge bg-primary-custom text-uppercase mb-2">Digital Marketing</span>
+                                    <h5 class="fw-bold">Lead Generation Campaign</h5>
+                                    <p class="text-secondary mb-2"><small><strong>The Challenge:</strong> A new product
+                                            launch needed to generate qualified leads, fast.</small></p>
+                                    <p class="text-secondary mb-3"><small><strong>Our Solution:</strong> Developed a
+                                            high-converting landing page and a targeted SEO & PPC campaign.</small></p>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-dark btn-sm rounded-pill mt-3">Get a
+                                    Similar Solution</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 5: Startup App -->
                     <div class="col">
-                        <div class="portfolio-card animate-on-scroll delay-8" data-category="design">
-                            <img src="../assets/img/portfolio4.png"
-                                class="card-img-top" alt="Startup App Mockup">
+                        <div class="portfolio-card animate-on-scroll delay-8">
+                            <div class="project-details-wrapper">
+                                <img src="../assets/img/portfolio4.png" class="card-img-top" alt="Startup App Mockup">
+                            </div>
+                            <!-- CONTENT UPDATE: Rewritten as mini case study -->
                             <div class="project-details">
-                                <h5 class="fw-bold">FinTech Startup Portal</h5>
-                                <p class="text-secondary"><small>Category: Web Design & Development</small></p>
+                                <div>
+                                    <span class="badge bg-primary-custom text-uppercase mb-2">Brand & Web Design</span>
+                                    <h5 class="fw-bold">FinTech Startup Portal</h5>
+                                    <p class="text-secondary mb-2"><small><strong>The Challenge:</strong> A new FinTech
+                                            startup needed to build brand trust and acquire its first 1,000 users.</small>
+                                    </p>
+                                    <p class="text-secondary mb-3"><small><strong>Our Solution:</strong> Created a full
+                                            brand identity and a compelling website focused on user-friendly
+                                            onboarding.</small></p>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-dark btn-sm rounded-pill mt-3">Get a
+                                    Similar Solution</a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 6: B2B E-Business Portal -->
                     <div class="col">
-                        <div class="portfolio-card animate-on-scroll delay-9" data-category="ebusiness">
-                            <img src="../assets/img/portfolio5.png"
-                                class="card-img-top" alt="B2B E-Business Portal Mockup">
+                        <div class="portfolio-card animate-on-scroll delay-9">
+                            <div class="project-details-wrapper">
+                                <img src="../assets/img/portfolio5.png" class="card-img-top"
+                                    alt="B2B E-Business Portal Mockup">
+                            </div>
+                            <!-- CONTENT UPDATE: Rewritten as mini case study -->
                             <div class="project-details">
-                                <h5 class="fw-bold">Enterprise E-Business Hub</h5>
-                                <p class="text-secondary"><small>Category: e-Business Strategy</small></p>
+                                <div>
+                                    <span class="badge bg-primary-custom text-uppercase mb-2">E-Business
+                                        Strategy</span>
+                                    <h5 class="fw-bold">Enterprise E-Business Hub</h5>
+                                    <p class="text-secondary mb-2"><small><strong>The Challenge:</strong> A B2B client
+                                            needed to digitize their complex supply chain and ordering process.</small>
+                                    </p>
+                                    <p class="text-secondary mb-3"><small><strong>Our Solution:</strong> Designed an
+                                            end-to-end e-business strategy and portal to streamline operations.</small>
+                                    </p>
+                                </div>
+                                <a href="contact.html" class="btn btn-outline-dark btn-sm rounded-pill mt-3">Get a
+                                    Similar Solution</a>
                             </div>
                         </div>
                     </div>
@@ -329,14 +424,15 @@
 
 
         <!-- ============================================= -->
-        <!-- 4. CTA: LBM BUSINESS SOLUTIONS - UNIQUE COOL COLOR -->
+        <!-- 4. CTA: LBM BUSINESS SOLUTIONS (CONTENT UPDATED) -->
         <!-- ============================================= -->
         <section id="business-cta" class="py-5">
             <div class="container text-center animate-on-scroll">
-                <h2 class="fw-bold mb-3">Ready to Start Your Digital Journey?</h2>
-                <p class="lead mb-4">Partner with LBM Solutions and leverage our expertise to accelerate your success.
+                <!-- CONTENT UPDATE: New H2 and text -->
+                <h2 class="fw-bold mb-3">See Your Project Here</h2>
+                <p class="lead mb-4">You've seen our work. Now, let's talk about what we can build for you.
                 </p>
-                <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5">Contact Us Today</a>
+                <a href="contact.html" class="btn btn-light btn-lg rounded-pill px-5">Start Your Project</a>
             </div>
         </section>
 
@@ -344,7 +440,7 @@
     </main>
 
     <!-- ============================================= -->
-    <!-- 5. FOOTER - Black Dark Background -->
+    <!-- 5. FOOTER (CONTENT UPDATED) -->
     <!-- ============================================= -->
     <footer class="text-white" style="background-color: var(--bs-dark-footer);">
         <div class="container pt-5 pb-3">
@@ -357,13 +453,15 @@
                 <div class="col-md-2">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
+                        <!-- CONTENT UPDATE: Corrected link paths -->
                         <li><a href="about.html" class="text-secondary text-decoration-none py-1 d-block">About Us</a>
                         </li>
                         <li><a href="services.html"
                                 class="text-secondary text-decoration-none py-1 d-block">Services</a></li>
                         <li><a href="portfolio.html"
                                 class="text-secondary text-decoration-none py-1 d-block">Portfolio</a></li>
-                        <li><a href="index.html#faq" class="text-secondary text-decoration-none py-1 d-block">FAQs</a>
+                        <li><a href="../index.html#faq"
+                                class="text-secondary text-decoration-none py-1 d-block">FAQs</a>
                         </li>
                     </ul>
                 </div>
@@ -397,6 +495,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- CONTENT UPDATE: Corrected JS path -->
     <script src="../assets/js/script.js"></script>
     <!-- Custom Animation JavaScript using IntersectionObserver (REPLICATED from index.html) -->
     <script>
